@@ -1,0 +1,72 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6; /* Light gray background */
+    height: 100vh;
+    margin: 0;
+    display: flex;
+}
+
+
+
+.form-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    margin-top: 330px;
+}
+
+.form {
+    background-color: #ffffff; /* White background for the form */
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px; /* Set a maximum width */
+}
+
+    .form h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .form div {
+        margin-bottom: 15px;
+    }
+
+    .form label {
+        display: block;
+        margin-bottom: 5px;
+        color: #4a5568; /* Gray text */
+    }
+
+    .form input, .form textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #d1d5db; /* Light gray border */
+        border-radius: 4px;
+        transition: border-color 0.2s;
+    }
+
+        .form input:focus, .form textarea:focus {
+            border-color: #3182ce; /* Blue border on focus */
+            outline: none;
+        }
+
+    .form button {
+        width: 100%;
+        padding: 10px;
+        background-color: #3182ce; /* Blue background */
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+        .form button:hover {
+            background-color: #2b6cb0; /* Darker blue on hover */
+        }

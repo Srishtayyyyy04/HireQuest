@@ -1,0 +1,575 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes moveForward {
+    0% {
+        transform: translateZ(0);
+    }
+
+    100% {
+        transform: translate3d(858px, 0, 0);
+    }
+}
+
+@keyframes moveBackward {
+    0% {
+        transform: translate3d(-858px, 0, 0);
+    }
+
+    100% {
+        transform: translateZ(0);
+    }
+}
+
+.containerjobsr2 {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.containerjobsr1 {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.containerjobs-header {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+    .containerjobs-header h2 {
+        margin-left: 470px;
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+
+    .containerjobs-header p {
+        margin-left: 470px;
+        font-size: 14px;
+        color: #555;
+    }
+
+@keyframes moveFromRight {
+    0% {
+        transform: translateX(100%); /* Start off-screen to the right */
+    }
+
+    100% {
+        transform: translateX(0); /* Move into view */
+    }
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 150px;
+    transition: transform 3s ease;
+    animation: moveFromRight 5s infinite alternate; /* New animation */
+}
+
+.containerjobsr2 .card {
+    animation: moveBackward 5s infinite alternate; /* Apply the new animation for containerjobsr2 */
+}
+
+.card i {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #777;
+}
+
+.card a {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+#searchButton:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+#resultMessage {
+    font-weight: bolder;
+    font-size: 14px;
+    margin-top: 13px;
+    margin-left: 33px;
+    color: #f36b6b;
+}
+
+.card a:hover {
+    background-color: #0056b3;
+}
+
+/* Stop the animation when hovered */
+.card:hover {
+    animation: none; /* Disable animation */
+    transform: translate3d(859px, 0, 0); /* Keep the card in the end position */
+}
+
+.popup-container2 {
+    font-family: "Ubuntu", sans-serif;
+    display: none;
+    margin-right: 287px;
+    margin-top: 121px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.popup-container {
+    font-family: "Ubuntu", sans-serif;
+    display: none;
+    margin-top: 343px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+i.fas.fa-money-bill {
+    margin-right: 10px;
+}
+
+.popup {
+    position: relative;
+    background-color: #2d2929;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    pointer-events: auto; /* Allow interactions with popup */
+}
+
+.popup2 {
+    height: 114px;
+    width: 107px;
+    position: relative;
+    background-color: #837575;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    pointer-events: auto; /* Allow interactions with popup */
+}
+
+.popup-title {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+    .popup-title img {
+        margin-right: 10px;
+    }
+
+.popup-salary {
+    color: white;
+    font-size: 27px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-left: 27px;
+}
+
+.popup-salary2 {
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-left: 15px;
+}
+
+.popup-salary22 {
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: -19px;
+    margin-left: 9px;
+}
+
+.popup-slider {
+    width: 100%;
+    height: 9px;
+    background-color: #d3d3d3;
+    border-radius: 5px;
+    position: relative;
+}
+
+.popup-slider-handle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+    .popup-slider-handle:nth-child(1) {
+        left: 0;
+    }
+
+    .popup-slider-handle:nth-child(2) {
+        right: 0;
+    }
+
+.container {
+    max-width: 1131px;
+    margin: 36px auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin-left: 20px;
+}
+
+    .logo h1 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+nav {
+    margin-right: 20px;
+}
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+        position: relative;
+    }
+
+        nav a::after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: -5px; /* Adjust this value based on your spacing needs */
+            width: 100%;
+            height: 2px; /* Thickness of the line */
+            background-color: transparent; /* Initially hidden */
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        nav a:hover::after {
+            background-color: #000; /* Black line on hover */
+        }
+
+    nav .btn {
+        background-color: #0a0b0b;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+.hero {
+    position: relative;
+    background-color: #fff;
+    padding: 40px 0;
+}
+
+.hero-text {
+    float: left;
+    width: 50%;
+    padding-right: 20px;
+}
+
+    .hero-text h2 {
+        margin-top: -32px;
+        margin-left: 28px;
+        font-size: 48px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .hero-text p {
+        margin-left: 30px;
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 30px;
+    }
+
+.search-bar {
+    margin-left: 25px;
+    display: flex;
+    gap: 10px;
+}
+
+    .search-bar input {
+        flex: 2;
+        padding: 10px;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        margin-bottom: 0;
+    }
+
+    .search-bar select {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        margin-bottom: 0; /* Remove bottom margin */
+    }
+
+    .search-bar button {
+        flex: 1; /* Same as select for consistency */
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #0a0b0b;
+        color: #fff;
+        cursor: pointer;
+    }
+
+.hero-image {
+    float: left;
+    width: 50%;
+}
+
+    .hero-image img {
+        margin-top: -27px;
+        margin-left: 127px;
+        width: 70%;
+        height: 70%;
+    }
+
+.companies {
+    height: 115px;
+    border-radius: 19px;
+    margin-top: 296px;
+    background-color: #4c4545;
+    padding: 4px 0;
+}
+
+img .stripe {
+    margin-top: 5px;
+}
+
+.companies .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.company {
+    margin-top: -65px;
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    max-width: 200px;
+}
+
+    .company img {
+        width: 100%;
+        height: auto;
+    }
+
+.trust {
+    margin-top: 53px;
+    background-color: #f8f8f8;
+    padding: 40px 0;
+    text-align: center; /* Center the text */
+    overflow: hidden; /* Hide overflowing logos */
+    position: relative; /* For absolute positioning of logos */
+}
+
+    .trust h1 {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+
+.containertrust {
+    display: flex;
+    align-items: center;
+    white-space: nowrap; /* Prevent logos from wrapping to the next line */
+    animation: scroll 20s linear infinite; /* Apply scrolling animation */
+}
+
+.logo {
+    display: inline-block; /* Make sure logos are inline */
+    margin-right: 20px; /* Spacing between logos */
+}
+
+    .logo img {
+        max-width: 150px;
+        height: auto;
+    }
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%); /* Adjust this based on the width of the container */
+    }
+}
+
+.jobs {
+    background-color: #fff;
+    padding: 40px 0;
+    text-align: center; /* Center the text */
+}
+
+    .jobs h2 {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .jobs p {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 30px;
+    }
+
+.jobs-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center job cards */
+}
+
+.job-card {
+    width: 30%; /* Adjusted width for better alignment */
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin: 10px; /* Added margin for spacing */
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text */
+}
+
+.job-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px; /* Space between icon and text */
+}
+
+    .job-icon img {
+        max-width: 30px;
+        height: auto;
+    }
+
+.job-info {
+    float: left;
+    width: calc(100% - 60px);
+}
+
+    .job-info h3 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .job-info p {
+        font-size: 16px;
+        color: #888;
+    }
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.no-animation .card {
+    animation: none !important;
+}
+
+.containerjobsr1 .card {
+    animation: moveForward 2s infinite alternate;
+    transition: animation-play-state 0.30s ease;
+}
+
+    .containerjobsr1 .card:hover {
+        animation: none;
+        transform: translate3d(859px, 0, 0);  Keep the card in the end position 
+    }
+.containerjobsr2 .card {
+    animation: moveForward 2s infinite alternate;
+    transition: animation-play-state 0.30s ease;
+}
+
+    .containerjobsr2 .card:hover {
+        animation: none;
+        transform: translate3d(-859px, 0, 0); /* Keep the card in the end position */
+    }
